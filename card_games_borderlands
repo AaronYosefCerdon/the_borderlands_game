@@ -1,49 +1,65 @@
-#Print intro message for the trivia game.
+# Print intro message for the trivia game.
 introduction = "Welcome to the Borderlands, the place between life and death. Clear all 16 games to find the truth."
 print(introduction)
 
-#Print the instructions for the game.
+# Print the instructions for the game.
 mechanics = "Start by choosing a game from the following options: Ace, Jack, Queen and King. Afterwards, choose a card suit: Clubs, Spades, Diamonds or Hearts. For example, Ace of Diamonds."
-
 print(mechanics)
 
 message = "The games can be cleared in any order. The truth will be revealed once all games have been cleared. Best of luck."
-
 print(message)
 
-#Use if for choosing a game.
+# Use if for choosing a game.
 game_choice = input("Choose the game you want to play: ")
 
-#Create the Ace of Diamonds game.
+# Create the Ace of Diamonds game.
+if game_choice == "Ace of Diamonds":
+    print("Welcome to the Ace of Diamonds! The game is called Star Magic.")
+    print("Answer these 10 questions about constellations to clear the game. If a mistake is made, game over. Good luck!")
 
-#Create the Ace of Hearts game.
+    # Define a list of questions and answers
+    star_questions = [
+        {"question": "What constellation is depicted by the lion?", "answer": "Leo"},
+        {"question": "Which animal is represented by Aries?", "answer": "Ram"},
+        {"question": "Which constellation is said to be the bird that carried Zeus' thunderbolts?", "answer": "Aquila"},
+        {"question": "Which constellation is depicted as the sea monster?", "answer": "Cetus"},
+        {"question": "There are _____ well-known constellations, each depicting different animals, beings or objects. How many official constellations are there?", "answer": "88"},
+        {"question": "What constellation is known as the smallest?", "answer": "Crux"},
+        {"question": "What constellation is the oldest known?", "answer": "Taurus"},
+        {"question": "Orion is considered as the ________ constellation. What is he considered as?", "answer": "Hunter"},
+        {"question": "Which constellation is known as the biggest?", "answer": "Hydra"},
+        {"question": "Which constellation is depicted as the Twins?", "answer": "Gemini"}
+    ]
 
-#Create the Ace of Spades game.
+    # Iterate over the questions
+    for i, question in enumerate(star_questions):
+        print(f"\nQuestion {i+1}: {question['question']}")
 
-#Create the Ace of Clubs game.
+        # Get the answer
+        user_answer = input("Enter your answer here: ")
 
-#Create the Jack of Diamonds game.
+        # Check if the user's answer is correct
+        if user_answer.lower() == question["answer"].lower():
+            print("Correct! Proceed to the next question.")
+        else:
+            print(f"Incorrect. The correct answer is {question['answer']}.")
+            print("Game over!")
+            break
 
-#Create the Jack of Hearts game.
-
-#Create the Jack of Spades game.
-
-#Create the Jack of Clubs game.
-
-#Create the Queen of Diamonds game.
-
-#Create the Queen of Hearts game.
-
-#Create the Queen of Spades game.
-
-#Create the Queen of Clubs game.
-
-#Create the King of Diamonds game.
-
-#Create the King of Hearts game.
-
-#Create the King of Spades game.
-
-#Create the King of Clubs game.
-
-#End the games with "Game Clear!"
+# Create the Ace of Hearts game.
+# Create the Ace of Spades game.
+# Create the Ace of Clubs game.
+# Create the Jack of Diamonds game.
+# Create the Jack of Hearts game.
+# Create the Jack of Spades game.
+# Create the Jack of Clubs game.
+# Create the Queen of Diamonds game.
+# Create the Queen of Hearts game.
+# Create the Queen of Spades game.
+# Create the Queen of Clubs game.
+# Create the King of Diamonds game.
+# Create the King of Hearts game.
+# Create the King of Spades game.
+# Create the King of Clubs game.
+# End the games with "Game Clear!"
+# print("Game Clear!")
