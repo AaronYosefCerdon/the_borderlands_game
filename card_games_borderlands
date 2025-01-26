@@ -1,0 +1,39 @@
+#Print intro message for the trivia game.
+
+#Print the instructions for the game.
+
+#Use if for choosing a game.
+
+#Create the Ace of Diamonds game.
+
+#Create the Ace of Hearts game.
+
+#Create the Ace of Spades game.
+
+#Create the Ace of Clubs game.
+
+#Create the Jack of Diamonds game.
+
+#Create the Jack of Hearts game.
+
+#Create the Jack of Spades game.
+
+#Create the Jack of Clubs game.
+
+#Create the Queen of Diamonds game.
+
+#Create the Queen of Hearts game.
+
+#Create the Queen of Spades game.
+
+#Create the Queen of Clubs game.
+
+#Create the King of Diamonds game.
+
+#Create the King of Hearts game.
+
+#Create the King of Spades game.
+
+#Create the King of Clubs game.
+
+#End the games with "Game Clear!"
