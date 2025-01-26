@@ -1,8 +1,18 @@
 #Print intro message for the trivia game.
+introduction = "Welcome to the Borderlands, the place between life and death. Clear all 16 games to find the truth."
+print(introduction)
 
 #Print the instructions for the game.
+mechanics = "Start by choosing a game from the following options: Ace, Jack, Queen and King. Afterwards, choose a card suit: Clubs, Spades, Diamonds or Hearts. For example, Ace of Diamonds."
+
+print(mechanics)
+
+message = "The games can be cleared in any order. The truth will be revealed once all games have been cleared. Best of luck."
+
+print(message)
 
 #Use if for choosing a game.
+game_choice = input("Choose the game you want to play: ")
 
 #Create the Ace of Diamonds game.
 
