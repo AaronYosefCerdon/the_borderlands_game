@@ -1,6 +1,6 @@
 import sys
 
-# Print intro message for the trivia game.
+# Print intro message for the game.
 introduction = "Welcome to the Borderlands, the place between life and death. Clear all 16 games to find the truth of this place."
 print(introduction)
 
@@ -151,7 +151,22 @@ def main():
             ]
             if play_game(simple_questions, "Inner Soul", 3):
                 games_played.append("Jack of Hearts")
-                game_clear += 1                
+                game_clear += 1    
+        #Create the Jack of Spades game.
+        elif game_choice == "7" and "Jack of Spades" not in games_played:
+            print("Welcome to the Jack of Spades. The game is called Lava Floor.")
+            print("The arena's floor is lava. Navigate the obstacles to make it to the goal. Choose your actions wisely.")
+           
+            lava_questions = [
+                {"question": "The start has two possible paths. A small jump to a frail platform or a large jump to a sturdy platform. Do you do a small or large jump?", "answer": "large"},
+                {"question": "Reaching the platform, there are 2 sets of stairs. One leads downward and the other leads upward. Do you go upward or downward?", "answer": "Upward"},
+                {"question": "Upon finishing the stairs, there are 2 bridges. One is made of thick wood and the other is made of heat resistant steel. Which bridge do you cross? Wood or Steel? ", "answer": "Steel"},
+                {"question": "The goal is only step away. There are however two doors in your way. One is covered by hearts and the other is filled with spades. Which door leads to the goal? Hearts or Spades?", "answer": "Spades"},
+                
+            ]
+            if play_game(lava_questions, "Lava Floor", 4):
+                games_played.append("Jack of Spades")
+                game_clear += 1                            
         # End if all games have been cleared.
         if len(games_played) == 16:
             print("Congratulations! You have cleared all the games!")
