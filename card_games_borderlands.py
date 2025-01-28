@@ -121,6 +121,7 @@ def main():
             if play_game(escape_questions, "Escape Rules", 7):
                 games_played.append("Ace of Clubs")
                 game_clear += 1
+                
         #Create the Jack of Diamonds game.
         elif game_choice == "5" and "Jack of Diamonds" not in games_played:
             print("Welcome to the Jack of Diamonds. The game is called Mathlete Mayhem.")
@@ -138,6 +139,7 @@ def main():
             if play_game(math_questions, "Mathlete Mayhem", 7):
                 games_played.append("Jack of Diamonds")
                 game_clear += 1
+                
         #Create the Jack of Hearts game.
         elif game_choice == "6" and "Jack of Hearts" not in games_played:
             print("Welcome to the Jack of Hearts. The game is called Inner Soul.")
@@ -152,6 +154,7 @@ def main():
             if play_game(simple_questions, "Inner Soul", 3):
                 games_played.append("Jack of Hearts")
                 game_clear += 1    
+                
         #Create the Jack of Spades game.
         elif game_choice == "7" and "Jack of Spades" not in games_played:
             print("Welcome to the Jack of Spades. The game is called Lava Floor.")
@@ -167,6 +170,7 @@ def main():
             if play_game(lava_questions, "Lava Floor", 4):
                 games_played.append("Jack of Spades")
                 game_clear += 1  
+                
         #Create the Jack of Clubs game.
         elif game_choice == "8" and "Jack of Clubs" not in games_played:
             print("Welcome to the Jack of Clubs. The game is called Better Together.")
@@ -206,6 +210,21 @@ def main():
             if play_game(riddle_questions, "Display Exploration", 9):
                 games_played.append("Queen of Diamonds")
                 game_clear += 1
+                
+        #Create the Queen of Hearts game.
+        elif game_choice == "10" and "Queen of Hearts" not in games_played:
+            print("Welcome to the Queen of Hearts. The game is called Life Story.")
+            print("The game is simple. Just answer one simple question about life.")                
+            print("The clear condition is answer correctly to win.")
+           
+            reflect_questions = [
+                {"question": "There was once a person who felt alone their whole life. Even surrounded by loved ones, they felt detached from the world around them. One day, the person found themselves in a mysterious place where deadly games have to be played to survive and he was going to be like always, solo. Upon clearing the final game, a question was raised into their thought. Regardless of their answer, the person would finally find out the truth of that world after every single action. My question is this, what did the person lack that they were so deatched from the world? ", "answer": "Emotion"}
+                               
+            ]
+            if play_game(reflect_questions, "Life Story", 1):
+                games_played.append("Queen of Hearts")
+                game_clear += 1
+                                
         #Create the Queen of Spades game.
         elif game_choice == "11" and "Queen of Spades" not in games_played:
             print("Welcome to the Queen of Spades. The game is called Throne War.")
@@ -225,6 +244,7 @@ def main():
             if play_game(chase_questions, "Throne War", 6):
                 games_played.append("Queen of Spades")
                 game_clear += 1
+                
         #Create the Queen of Clubs game.
         elif game_choice == "12" and "Queen of Clubs" not in games_played:
             print("Welcome to the Queen of Clubs. The game is called Snake Ladders.")
@@ -240,7 +260,7 @@ def main():
                 {"question": "As your team reaches the end, you are faced with a final duel against the last surviving team: The Queen of Clubs team. The final duel is to find a hidden key in the space filled with 100 boxes where the only clue is that escape lies with the two teams themselves. You notice boxes with stripes among the piles. What colors are the box the key is hidden in? Answer in this format: Yellow and Orange. ", "answer": "Purple and Black"}
                                                        
             ]
-            if play_game(safe_questions, "Safe Zone", 5):
+            if play_game(safe_questions, "Snake Ladders", 5):
                 games_played.append("Queen of Clubs")
                 game_clear += 1
                                                                                                         
