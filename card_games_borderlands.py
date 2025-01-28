@@ -24,7 +24,7 @@ def play_game(questions, game_name, num_questions):
             print(f"Wrong answer! The correct answer was: {question['answer']}")
             print("Game Over! Death awaits.")
             sys.exit()  # Terminate the program if the answer is wrong
-    print(f"Congratulations! You've cleared the {game_name}!")
+    print(f"Congratulations! Game Cleared! You've cleared {game_name}!")
     return True  # Return True if the player clears the game
 
 def main():
@@ -161,7 +161,7 @@ def main():
                 {"question": "The start has two possible paths. A small jump to a frail platform or a large jump to a sturdy platform. Do you do a small or large jump?", "answer": "large"},
                 {"question": "Reaching the platform, there are 2 sets of stairs. One leads downward and the other leads upward. Do you go upward or downward?", "answer": "Upward"},
                 {"question": "Upon finishing the stairs, there are 2 bridges. One is made of thick wood and the other is made of heat resistant steel. Which bridge do you cross? Wood or Steel? ", "answer": "Steel"},
-                  {"question": "The goal is only step away. There are however two doors in your way. One is covered by hearts and the other is filled with spades. Which door leads to the goal? Hearts or Spades?", "answer": "Spades"},
+                {"question": "The goal is only step away. There are however two doors in your way. One is covered by hearts and the other is filled with spades. Which door leads to the goal? Hearts or Spades?", "answer": "Spades"},
                 
             ]
             if play_game(lava_questions, "Lava Floor", 4):
@@ -171,7 +171,7 @@ def main():
         elif game_choice == "8" and "Jack of Clubs" not in games_played:
             print("Welcome to the Jack of Clubs. The game is called Better Together.")
             print("The arena is a huge mansion. Find 88 keys pertaining to the constellations scattered around. Work together with the 21 other participants to find them all.")
-            print("Since teamwork is key, each participant needs to find 4 keys. The ones assigned to you are Virgo, Libra, Andromeda and Draco. Do your part and find your keys.")
+            print("Since teamwork is key, each participant needs to find 4 keys. The ones assigned to you are Virgo, Libra, Andromeda and Draco. Do your part and find your keys. Failure will result in death.")
            
             better_questions = [
                 {"question": "The key for Libra lies behind a painting stained with blood. This clue narrows down the answer to a war painting and a massacre painting. Noting the game is about teamwork, which painting is hiding Libra's key?", "answer": "War"},
@@ -182,7 +182,31 @@ def main():
             ]
             if play_game(better_questions, "Better Together", 4):
                 games_played.append("Jack of Clubs")
-                game_clear += 1                                          
+                game_clear += 1                              
+
+        #Create the Queen of Diamonds game.
+        elif game_choice == "9" and "Queen of Diamonds" not in games_played:
+            print("Welcome to the Queen of Diamonds. The game is called Display Exploration.")
+            print("The arena is an museum with various exhibits in different areas. Each participant is locked with a collar that will detonate after a certain amount of time passes and given a phone for the game.")
+            print("The employees of the museum have placed various riddles around the place that will unlock the collars. The catch is, the collars have 9 locks each. Enter the answers for each riddle in the given phone to the corresponding lock to open them.")
+            print("Be careful, just one incorrect answer will detonate the collar.")
+           
+            riddle_questions = [
+                {"question": "I have a mouth and a bed but I don't eat or sleep. What am I?", "answer": "River"},
+                {"question": "I am always moving but I never move. Also, I follow you everywhere but you only see me when there's light. What am I?", "answer": "Shadow"},
+                {"question": "What is something that people repeatedly break but will never physically hold?", "answer": "Promise"},
+                {"question": "What is something that you know is always approaching but will never actually arrive?.", "answer": "Tomorrow"},
+                {"question": "I always move at certain speeds. I feel happy when love finds me, but I always break when I'm alone and betrayed. What is being described?", "answer": "Heart"},
+                {"question": "What is something that will inevitably happen but we can never prevent?", "answer": "Death"},
+                {"question": "I disappear at night but I greet you in the morning. I do this to everyone but at different times. What am I?", "answer": "Sun"},
+                {"question": "This happens in different stages of our lives. Some will fade and some will stay. New ones will appear and go, but it is undeniable that this exists even if it disappears.", "answer": "Memories"},
+                {"question": "I am older than everyone but bit by bit I will fade. When the time comes, I will be nothing and disappear as if I never existed. What is this?", "answer": "Universe"}
+                                
+            ]
+            if play_game(riddle_questions, "Display Exploration", 9):
+                games_played.append("Queen of Diamonds")
+                game_clear += 1
+                                                                        
         # End if all games have been cleared.
         if len(games_played) == 16:
             print("Congratulations! You have cleared all the games!")
