@@ -138,6 +138,20 @@ def main():
             if play_game(math_questions, "Mathlete Mayhem", 7):
                 games_played.append("Jack of Diamonds")
                 game_clear += 1
+        #Create the Jack of Hearts game.
+        elif game_choice == "6" and "Jack of Hearts" not in games_played:
+            print("Welcome to the Jack of Hearts. The game is called Inner Soul.")
+            print("Answer these simple question with simple answers. Do not overthink.")
+           
+            simple_questions = [
+                {"question": "A person at one point or another asks in life: What is my ________? What does a person wonder? No hint.", "answer": "Purpose"},
+                {"question": "No one is born to be alone in this _______. You'll find people who will love and care for you. Where is a person not born to be alone?", "answer": "World"},
+                {"question": "I would _________ myself for the ones I love. What would someone do for their loved ones? ", "answer": "Sacrifice"},
+                
+            ]
+            if play_game(simple_questions, "Inner Soul", 3):
+                games_played.append("Jack of Hearts")
+                game_clear += 1                
         # End if all games have been cleared.
         if len(games_played) == 16:
             print("Congratulations! You have cleared all the games!")
