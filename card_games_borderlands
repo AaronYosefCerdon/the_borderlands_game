@@ -1,3 +1,5 @@
+import sys
+
 # Print intro message for the trivia game.
 introduction = "Welcome to the Borderlands, the place between life and death. Clear all 16 games to find the truth of this place."
 print(introduction)
@@ -9,9 +11,9 @@ print(mechanics)
 message = "The games can be cleared in any order. The truth will be revealed once all games have been cleared. Failure in any game and failure to complete all games will result in death. Best of luck. "
 print(message)
 
-#Create a format for each game.
+# Create a format for each game.
 def play_game(questions, game_name, num_questions):
-    #Initialize a score counter.
+    # Initialize a score counter.
     score = 0
     for question in questions:
         print(question["question"])
@@ -21,14 +23,14 @@ def play_game(questions, game_name, num_questions):
         else:
             print(f"Wrong answer! The correct answer was: {question['answer']}")
             print("Game Over! Death awaits.")
-            return False  # Return False if the player fails the game
+            sys.exit()  # Terminate the program if the answer is wrong
     print(f"Congratulations! You've cleared the {game_name}!")
     return True  # Return True if the player clears the game
 
 def main():
-    #Set a list to ensure no repeated games and track the finished games.
+    # Set a list to ensure no repeated games and track the finished games.
     game_clear = 0
-    games_played = [ ]  
+    games_played = []  
     while len(games_played) < 16:  
         print("Choose the game you want to play: ")
         print("1. Ace of Diamonds")
@@ -48,8 +50,10 @@ def main():
         print("15. King of Spades")
         print("16. King of Clubs")
         game_choice = input("Enter the number of your chosen game: ")
-        #Create the Ace of Diamonds game.
+
+        # Create the Ace of Diamonds game.
         if game_choice == "1" and "Ace of Diamonds" not in games_played:
+            print("Welcome to the Ace of Diamonds. The game is called Star Magic.")
             print("Answer these 10 questions about constellations to clear the game. If a mistake is made, game over. Good luck!")
             star_questions = [
                 {"question": "What constellation is depicted by the lion?", "answer": "Leo"},
@@ -66,8 +70,10 @@ def main():
             if play_game(star_questions, "Star Magic", 10):
                 games_played.append("Ace of Diamonds")
                 game_clear += 1
-        #Create the Ace of Hearts game.
+
+        # Create the Ace of Hearts game.
         elif game_choice == "2" and "Ace of Hearts" not in games_played:
+            print("Welcome to the Ace of Hearts. The game is called Mind Heart.")
             print("Complete these 7 quotes from the TV show Alice in Borderland by filling in the blanks. The game will be cleared once all quotes are finished. Any mistake means game over. Good luck!")
             quote_questions = [
                 {"question": "Ryohei Arisu: 'You guys are all I have. If someone has to _________ this game, it's not me'. This heartbreaking statement by Ryohei was uttered as he pleaded for his friends to reveal their locations in the deadly 7 of Hearts. Fill in the blank with the correct word. Here's a clue: it is an action word that depicts a certain condition when disaster strikes.", "answer": "Survive"},
@@ -81,8 +87,10 @@ def main():
             if play_game(quote_questions, "Mind Heart", 7):
                 games_played.append("Ace of Hearts")
                 game_clear += 1
-        #Create the Ace of Spades game.
+
+        # Create the Ace of Spades game.
         elif game_choice == "3" and "Ace of Spades" not in games_played:
+            print("Welcome to the Ace of Spades. The game is called Run Rabbit Run.")
             print("You are a rabbit running through a 5km long road. The goal of the game is to make it through the obstacles blocking the road.")
             print("Answer 5 health-related questions to clear the game. Failure will result in death. Remember that each question will increment at every 1km.")
             health_questions = [
@@ -95,8 +103,10 @@ def main():
             if play_game(health_questions, "Run Rabbit Run", 5):
                 games_played.append("Ace of Spades")
                 game_clear += 1
-        #Create the Ace of Clubs game.
+
+        # Create the Ace of Clubs game.
         elif game_choice == "4" and "Ace of Clubs" not in games_played:
+            print("Welcome to the Ace of Clubs. The game is called Escape Rules.")
             print("You are trapped in a rectangular room with 6 other people. The key to your escape is your teamwork.")
             print("Answer 7 questions about passcodes each participant received to find the keys that will unlock the 7 padlocks of the exit. Participants may not say their passcode out loud. They may only give clues. Failure will result in death by poison gas.")
             escape_questions = [
@@ -113,6 +123,7 @@ def main():
                 game_clear += 1
         #Create the Jack of Diamonds game.
         elif game_choice == "5" and "Jack of Diamonds" not in games_played:
+            print("Welcome to the Jack of Diamonds. The game is called Mathlete Mayhem.")
             print("You are trapped at the center of a massive maze. Certain paths are blocked off by math equations.")
             print("Answer 7 math questions to escape the maze in the shortest possible path. Failure will result in death by drowning.")
             math_questions = [
@@ -122,18 +133,16 @@ def main():
                 {"question": "A couple are planning their wedding. They invited 427 guests in total. Tables for the reception are for 7. How many tables are needed to seat all 427 guests?", "answer": "61"},
                 {"question": "A flower shop sells bouquets depending on the number of flowers. 20 flowers cost Php 150. How much does 90 flowers cost? Answer only the number i.e. 400.", "answer": "675"},
                 {"question": "A pet shop has 47 of a certain breed of dog. If each dog needs about 4kg of food per month and the cost of food per kg is Php 200, how much do they spend a year on food? Answer in this format: 10,000", "answer": "451,200"},
-                {"question": "A laboratory synthesized a new serum for a certain disease. There are 176 patients awaiting this treatment. If each patient needs a dose for day and each dose is inside a syringe, how many syringes do all the patients need for a week?", "answer": "1232"}
+                {"question": "A laboratory synthesized a new serum for a certain disease. There are 176 patients awaiting this treatment. If each patient needs a dose for day and each dose is inside a syringe, how many syringes do all the patients need for a week?", "answer": ""}
             ]
             if play_game(math_questions, "Mathlete Mayhem", 7):
-                games_played.append("Ace of Clubs")
-                game_clear += 1                
-        #End if all games have been cleared.
+                games_played.append("Jack of Diamonds")
+                game_clear += 1
+        # End if all games have been cleared.
         if len(games_played) == 16:
             print("Congratulations! You have cleared all the games!")
             break
-    #End if a wrong answer is put in.
-    if len(games_played) < 16:
-        print("You did not clear all the games. Game Over!")
+   
 
 if __name__ == "__main__":
     main()
