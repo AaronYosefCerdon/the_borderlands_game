@@ -177,7 +177,7 @@ def main():
                 {"question": "The key for Libra lies behind a painting stained with blood. This clue narrows down the answer to a war painting and a massacre painting. Noting the game is about teamwork, which painting is hiding Libra's key?", "answer": "War"},
                 {"question": "After getting Libra's key, the clue for Andromeda says that it is hidden in the depths of the mansion. Do you go to the attic or the basement?", "answer": "Basement"},
                 {"question": "Upon finding Andromeda's key, you proceed to Virgo's key. The clue says it is hidden where the helpers sleep. The only places that apply are a 1st floor and a 3rd floor room. Which room is the key in?", "answer": "1st floor"},
-                  {"question": "The final key is Draco's. The clue says it is hidden where dragons rule. Upon getting to the roof, there are 7 towers with different symbols: a dove, a dragon, a star, a lion, a pegasus, a centaur and a fairy. Which tower is Draco's key in? Answer the animal only.", "answer": "Dragon"},
+                {"question": "The final key is Draco's. The clue says it is hidden where dragons rule. Upon getting to the roof, there are 7 towers with different symbols: a dove, a dragon, a star, a lion, a pegasus, a centaur and a fairy. Which tower is Draco's key in? Answer the animal only.", "answer": "Dragon"},
                 
             ]
             if play_game(better_questions, "Better Together", 4):
@@ -206,7 +206,26 @@ def main():
             if play_game(riddle_questions, "Display Exploration", 9):
                 games_played.append("Queen of Diamonds")
                 game_clear += 1
-                                                                        
+        #Create the Queen of Spades game.
+        elif game_choice == "11" and "Queen of Spades" not in games_played:
+            print("Welcome to the Queen of Spades. The game is called Throne War.")
+            print("The game is similar to Capture The Flag. However, this game involves not a flag, but a throne.")
+            print("Participants will fight against the Queen of Spades, Risa and her team. They must find the opposing team's throne and the assigned leader must sit down on it.")
+            print("If you get tagged or hit by a member of the opposing team, you will switch to that team. The game ends when the leader of one team sits on the throne of the opposing team. If a leader dies during the game, the other team wins.")
+           
+            chase_questions = [
+                {"question": "As the team leader, you planned ahead. Knowing the Queen of Spades Team has 10 against your 25, you decide to split the team into 5 groups of 5.The first area your team enters has 2 members of the opposing team. You see 2 exits with one being unguarded but further away. Do you go to the unguarded door or the guarded door?", "answer": "Unguarded"},
+                {"question": "After going through the door, your team turns a corner and all of them besides you are hit so you duck behind some crates. You see 4 paths ahead of you, a narrow hallway, a curved corridor, stairs with no railings and a door with spades. You notice that your former teammates have turned against you, leaving a 7v1 situation where 2 people guard each path besides one. Which path do you take? ", "answer": "Narrow Hallway"},
+                {"question": "Taking the narrow hallway, you come out to a room with more crates and hear a commotion. One of the teams you assigned have successfully caught a member of the other team by accidentally touching them. You know the Queen of Spades Team all respect ability. Do you A.) fight them 1v1 to prove yourself, B.) gang up on them, C.) force them to work with you or D.) Kill them.", "answer": "A"},
+                {"question": "After gaining intel from the captured enemy, you find out the Queen of Spades put her team's throne near where you hid yours. On the way back, you find a piece of paper on the ground that says: Her name is the key. Upon reaching the area you hid your team's throne in, you notice a door nearby needing a passcode. What is the code?", "answer": "Risa"},
+                {"question": "Upon opening the door, you find Risa, the Queen of Spades, sitting on her throne. She just stares at you and lunges. Do you A.) Dodge, B.) Block, C.) Scream or D.) Run", "answer": "B"},
+                {"question": "After blocking her hit, you two start fighting. The duel is bloody and brutal but after 20 minutes, she finally starts to tire and you notice her clutching her left leg. Hit her now and end the fight. A.) Torso, B.) Arms, or C.) Legs.", "answer": "C"}
+                                                              
+            ]
+            if play_game(chase_questions, "Throne War", 6):
+                games_played.append("Queen of Spades")
+                game_clear += 1
+                                                                                        
         # End if all games have been cleared.
         if len(games_played) == 16:
             print("Congratulations! You have cleared all the games!")
