@@ -111,6 +111,22 @@ def main():
             if play_game(escape_questions, "Escape Rules", 7):
                 games_played.append("Ace of Clubs")
                 game_clear += 1
+        #Create the Jack of Diamonds game.
+        elif game_choice == "5" and "Jack of Diamonds" not in games_played:
+            print("You are trapped at the center of a massive maze. Certain paths are blocked off by math equations.")
+            print("Answer 7 math questions to escape the maze in the shortest possible path. Failure will result in death by drowning.")
+            math_questions = [
+                {"question": "A baker made seven dozen cupcakes. Half are strawberry, a quarter are blueberry and the last quarter are chocolate. How many strawberry and blueberry cupcakes are there?", "answer": "63"},
+                {"question": "A town with a population of 138,492 is holding an election for mayor. How many votes does a candidate need for a majority? Answer in this format: 10,000.", "answer": "69,246"},
+                {"question": "A school is sending 48 students abroad for an exchange program. 15 are for Humanities, 8 are for Science, 12 are for History and the rest are for Math. How many students are there for Math? ", "answer": "13"},
+                {"question": "A couple are planning their wedding. They invited 427 guests in total. Tables for the reception are for 7. How many tables are needed to seat all 427 guests?", "answer": "61"},
+                {"question": "A flower shop sells bouquets depending on the number of flowers. 20 flowers cost Php 150. How much does 90 flowers cost? Answer only the number i.e. 400.", "answer": "675"},
+                {"question": "A pet shop has 47 of a certain breed of dog. If each dog needs about 4kg of food per month and the cost of food per kg is Php 200, how much do they spend a year on food? Answer in this format: 10,000", "answer": "451,200"},
+                {"question": "A laboratory synthesized a new serum for a certain disease. There are 176 patients awaiting this treatment. If each patient needs a dose for day and each dose is inside a syringe, how many syringes do all the patients need for a week?", "answer": "1232"}
+            ]
+            if play_game(math_questions, "Mathlete Mayhem", 7):
+                games_played.append("Ace of Clubs")
+                game_clear += 1                
         #End if all games have been cleared.
         if len(games_played) == 16:
             print("Congratulations! You have cleared all the games!")
