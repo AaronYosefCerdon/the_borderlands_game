@@ -3,182 +3,109 @@ introduction = "Welcome to the Borderlands, the place between life and death. Cl
 print(introduction)
 
 # Print the instructions for the game.
-mechanics = "Start by choosing a game from the following options: Ace, Jack, Queen and King. Afterwards, choose a card suit: Clubs, Spades, Diamonds or Hearts. For example, Ace of Diamonds."
+mechanics = "Start by choosing a game from the following options. Each game can only be cleared once. Trying to repeat a game will force you into the selection area again. The games will not stop unless all 16 games are cleared or incorrect answers are put in."
 print(mechanics)
 
 message = "The games can be cleared in any order. The truth will be revealed once all games have been cleared. Failure in any game and failure to complete all games will result in death. Best of luck. "
 print(message)
 
-# Add a game clear to track no. of games finished.
-game_clear = 0
-
-# Use a loop to play the games in any order.
-while game_clear < 16:
-    # Use if for choosing a game.
-    game_choice = input("Choose the game you want to play: ")
-    
-    star_questions = [
-            {"question": "What constellation is depicted by the lion?", "answer": "Leo"},
-            {"question": "Which animal is represented by Aries?", "answer": "Ram"},
-            {"question": "Which constellation is said to be the bird that carried Zeus' thunderbolts?", "answer": "Aquila"},
-            {"question": "Which constellation is depicted as the sea monster?", "answer": "Cetus"},
-            {"question": "There are _____ well-known constellations, each depicting different animals, beings or objects. How many official constellations are there?", "answer": "88"},
-            {"question": "What constellation is known as the smallest?", "answer": "Crux"},
-            {"question": "What constellation is the oldest known?", "answer": "Taurus"},
-            {"question": "Orion is considered as the ________ constellation. What is he considered as?", "answer": "Hunter"},
-            {"question": "Which constellation is known as the biggest?", "answer": "Hydra"},
-            {"question": "Which constellation is depicted as the Twins?", "answer": "Gemini"}
-        ]
-    
-    # Create the Ace of Diamonds game.
-    if game_choice == "Ace of Diamonds":
-        print("Welcome to the Ace of Diamonds! The game is called Star Magic.")
-        print("Answer these 10 questions about constellations to clear the game. If a mistake is made, game over. Good luck!")
-
-        # Define a list of questions and answers
-        
-    
-
-        # Added point system.
-        correct_stars = 0
-
-        # Iterate over the questions
-        for i, question in enumerate(star_questions):
-            print(f"\nQuestion {i+1}: {question['question']}")
-
-            # Get the answer
-            user_answer = input("Enter your answer here: ")
-
-            # Check if the user's answer is correct
-            if user_answer.lower() == question["answer"].lower():
-                print("Correct! Proceed to the next question.")
-                correct_stars += 1
-                print("Questions finished:", correct_stars)
-            else:
-                print(f"Incorrect. The correct answer is {question['answer']}.")
-                print("Game over!")
-                break
-
-        if correct_stars == 10:
-            print("Game Clear. Congratulations.")
-            game_clear += 1
-
-        play_again = input("Would you like to play another game? (yes/no): ")
-        if play_again.lower() != "yes":
-            break
+#Create a format for each game.
+def play_game(questions, game_name, num_questions):
+    #Initialize a score counter.
+    score = 0
+    for question in questions:
+        print(question["question"])
+        answer = input("Your answer: ").strip()
+        if answer.lower() == question["answer"].lower():
+            score += 1
         else:
-            continue
-    # Create the Ace of Hearts game.
-    if game_choice == "Ace of Hearts":
-        print("Welcome to the Ace of Hearts. The game is called Mind Heart.")
-        print("Complete these 7 quotes from the TV show Alice in Borderland by filling in the blanks. The game will be cleared once all quotes are finished. Any mistake means game over. Good luck!")
+            print(f"Wrong answer! The correct answer was: {question['answer']}")
+            print("Game Over! Death awaits.")
+            return False  # Return False if the player fails the game
+    print(f"Congratulations! You've cleared the {game_name}!")
+    return True  # Return True if the player clears the game
 
-        # Define a list of questions and answers
-        quote_questions = [
-            {"question": "Ryohei Arisu: 'You guys are all I have. If someone has to _________ this game, it's not me'. This heartbreaking statement by Ryohei was uttered as he pleaded for his friends to reveal their locations in the deadly 7 of Hearts. Fill in the blank with the correct word. Here's a clue: it is an action word that depicts a certain condition when disaster strikes.", "answer": "Survive"},
-            {"question": "Shuntaro Chishiya: To gain something, you need to ______ something. This brutal statement is caused by Chishiya's jaded look in life. What word describes the statement so it fills the criteria for you to gain something? Hint: its an action word that every person has experienced in life.", "answer": "lose"}, 
-            {"question": "Hikari Kuina: You just keep turning your back on your past, but I will ______ my past once more in order to survive. This determined statement fueled her fire to clear the games, what did she do to her past instead of turning her back on it? Hint: What you see in the mirror. ", "answer": "Face"},
-            {"question": "Niragi Suguru: Left to our own devices, _______ will rape, steal and kill each other. That's just who we really are. Niragi's beliefs came from his troubled life, who does he think will harm each other? No hints for this one.", "answer": "Humans"},
-            {"question": "Usagi Yuzuha: It amazes me that I'm willing to do ________ just so I can survive. If we weren't willing, we might as well die. Usagi's words highlights her will to survive the deadly games. What is she willing to do to survive? Hint: It is something we can all do.", "answer": "Anything"},
-            {"question": "Ginji Kyuma: Your life is yours. Don't _______ someone else's path. This statement inspires everyone to take their own fate into their hands. What is he saying should we not do? ", "answer": "Follow"},
-            {"question": "Mira Kano: Life is just a _______ we play together. You should try to enjoy it. Mira's last words is a statement that encompassed the themes of the Borderlands. What word is she comparing life to? Hint: It is something that can be done alone but is more fun together.", "answer": "Game"},
-    ]
-
-    # Add a quote counter.
-    correct_quotes = 0
-
-    # Iterate over the questions
-    for i, question in enumerate(quote_questions):
-        print(f"\nQuestion {i+1}: {question['question']}")
-
-        # Fill in the answers.
-        quote_answer = input("Enter your answer here: ")
-
-        # Check if the user's answer is correct
-        if quote_answer.lower() == question["answer"].lower():
-            print("Correct! Proceed to the next question.")        
-            correct_quotes += 1
-            print("Current quotes finished: ", correct_quotes)
-        else:
-            print(f"Incorrect. The correct answer is {question['answer']}.")
-            print("Game over!")
+def main():
+    #Set a list to ensure no repeated games and track the finished games.
+    game_clear = 0
+    games_played = [ ]  # List to track completed games
+    while len(games_played) < 4:  # Ensure all 4 games must be completed
+        print("Choose the game you want to play: ")
+        print("1. Ace of Diamonds")
+        print("2. Ace of Hearts")
+        print("3. Ace of Spades")
+        print("4. Ace of Clubs")
+        game_choice = input("Enter the number of your chosen game: ")
+        #Create the Ace of Diamonds game.
+        if game_choice == "1" and "Ace of Diamonds" not in games_played:
+            print("Answer these 10 questions about constellations to clear the game. If a mistake is made, game over. Good luck!")
+            star_questions = [
+                {"question": "What constellation is depicted by the lion?", "answer": "Leo"},
+                {"question": "Which animal is represented by Aries?", "answer": "Ram"},
+                {"question": "Which constellation is said to be the bird that carried Zeus' thunderbolts?", "answer": "Aquila"},
+                {"question": "Which constellation is depicted as the sea monster?", "answer": "Cetus"},
+                {"question": "There are _____ well-known constellations, each depicting different animals, beings or objects. How many official constellations are there?", "answer": "88"},
+                {"question": "What constellation is known as the smallest?", "answer": "Crux"},
+                {"question": "What constellation is the oldest known?", "answer": "Taurus"},
+                {"question": "Orion is considered as the ________ constellation. What is he considered as?", "answer": "Hunter"},
+                {"question": "Which constellation is known as the biggest?", "answer": "Hydra"},
+                {"question": "Which constellation is depicted as the Twins?", "answer": "Gemini"}
+            ]
+            if play_game(star_questions, "Star Magic", 10):
+                games_played.append("Ace of Diamonds")
+                game_clear += 1
+        #Create the Ace of Hearts game.
+        elif game_choice == "2" and "Ace of Hearts" not in games_played:
+            print("Complete these 7 quotes from the TV show Alice in Borderland by filling in the blanks. The game will be cleared once all quotes are finished. Any mistake means game over. Good luck!")
+            quote_questions = [
+                {"question": "Ryohei Arisu: 'You guys are all I have. If someone has to _________ this game, it's not me'. This heartbreaking statement by Ryohei was uttered as he pleaded for his friends to reveal their locations in the deadly 7 of Hearts. Fill in the blank with the correct word. Here's a clue: it is an action word that depicts a certain condition when disaster strikes.", "answer": "Survive"},
+                {"question": "Shuntaro Chishiya: To gain something, you need to ______ something. This brutal statement is caused by Chishiya's jaded look in life. What word describes the statement so it fills the criteria for you to gain something? Hint: it's an action word that every person has experienced in life.", "answer": "lose"},
+                {"question": "Hikari Kuina: You just keep turning your back on your past, but I will ______ my past once more in order to survive. This determined statement fueled her fire to clear the games, what did she do to her past instead of turning her back on it? Hint: What you see in the mirror.", "answer": "Face"},
+                {"question": "Niragi Suguru: Left to our own devices, _______ will rape, steal and kill each other. That's just who we really are. Niragi's beliefs came from his troubled life, who does he think will harm each other? No hints for this one.", "answer": "Humans"},
+                {"question": "Usagi Yuzuha: It amazes me that I'm willing to do ________ just so I can survive. If we weren't willing, we might as well die. Usagi's words highlight her will to survive the deadly games. What is she willing to do to survive? Hint: It is something we can all do.", "answer": "Anything"},
+                {"question": "Ginji Kyuma: Your life is yours. Don't _______ someone else's path. This statement inspires everyone to take their own fate into their hands. What is he saying we should not do?", "answer": "Follow"},
+                {"question": "Mira Kano: Life is just a _______ we play together. You should try to enjoy it. Mira's last words are a statement that encompassed the themes of the Borderlands. What word is she comparing life to? Hint: It is something that can be done alone but is more fun together.", "answer": "Game"}
+            ]
+            if play_game(quote_questions, "Mind Heart", 7):
+                games_played.append("Ace of Hearts")
+                game_clear += 1
+        #Create the Ace of Spades game.
+        elif game_choice == "3" and "Ace of Spades" not in games_played:
+            print("You are a rabbit running through a 5km long road. The goal of the game is to make it through the obstacles blocking the road.")
+            print("Answer 5 health-related questions to clear the game. Failure will result in death. Remember that each question will increment at every 1km.")
+            health_questions = [
+                {"question": "A woman is competing in a fun run with a total distance of 3 kilometers. She forgets to drink her water from the 2-liter flask she carried and passes out at the 2-kilometer mark. If she ran at a pace of 200 meters per 15 minutes and she estimated that she needed to drink 250mL of her water every 30 minutes, how much water should she have already drunk? Answer in mL.", "answer": "1250 mL"},
+                {"question": "Organizers of a scavenger hunt created resting stations inside the 5km scope area for the hunt. How many resting stations are there if they are placed every 200 meters?", "answer": "25"},
+                {"question": "A teenager created an exercise regimen to stay fit and healthy. He should consider his ________ so he does not overexert himself. What should he consider?", "answer": "limits"},
+                {"question": "A college student has been awake for 4 days without any sleep. He should have _______ instead of focusing on his work. What should he have done instead?", "answer": "slept"},
+                {"question": "12 people are competing in a swimming contest. What equipment should they wear for their eyes?", "answer": "Goggles"}
+            ]
+            if play_game(health_questions, "Run Rabbit Run", 5):
+                games_played.append("Ace of Spades")
+                game_clear += 1
+        #Create the Ace of Clubs game.
+        elif game_choice == "4" and "Ace of Clubs" not in games_played:
+            print("You are trapped in a rectangular room with 6 other people. The key to your escape is your teamwork.")
+            print("Answer 7 questions about passcodes each participant received to find the keys that will unlock the 7 padlocks of the exit. Participants may not say their passcode out loud. They may only give clues. Failure will result in death by poison gas.")
+            escape_questions = [
+                {"question": "Participant B's code is their height. If Participant A at 160cm is taller and Participant C at 158cm is shorter, what is the height of Participant B? Answer in this format: i.e. 100cm.", "answer": "159cm"},
+                {"question": "Participant D's code is their favorite color. They said it is not a part of the rainbow but at the same time it is all parts of the rainbow. What color are they describing?", "answer": "White"},
+                {"question": "Participant G's code is their favorite food. They said that it is something sweet that has a hole in the middle. What food are they describing?", "answer": "Doughnut"},
+                {"question": "Participant A's code is their dream career. They said it is in the field of engineering. Additionally, they said that this certain career can handle both hardware and software. What career is being described?", "answer": "Computer Engineer"},
+                {"question": "Participant F's code is their favorite flower. They said that it is the most common flower to give your significant other and that it was red. What flower is this?", "answer": "Rose"},
+                {"question": "Participant C's code is their pet dog's breed. They said that the breed is black and white with dots. What dog is this?", "answer": "Dalmatian"},
+                {"question": "Participant E's code is their birth month. They said that a new beginning happens during this month. What month is it?", "answer": "January"}
+            ]
+            if play_game(escape_questions, "Escape Rules", 7):
+                games_played.append("Ace of Clubs")
+                game_clear += 1
+        #End if all games have been cleared.
+        if len(games_played) == 4:
+            print("Congratulations! You have cleared all the games!")
             break
+    #End if a wrong answer is put in.
+    if len(games_played) < 4:
+        print("You did not clear all the games. Game Over!")
 
-    if correct_quotes == 7:
-        game_clear +=1
-
-    play_again = input("Would you like to play another game? (yes/no): ")
-    if play_again.lower() != "yes":
-        break  
-    else:
-        continue        
-    # Create the Ace of Spades game.
-    if game_choice == "Ace of Spades":
-        print("Welcome to the Ace of Spades. The game is called Run Rabbit Run .")
-        print("You are a rabbit is running through a 5km long road. The goal of the game is to make it through the obstacles blocking the road. ")
-        print("Answer 5 health related questions to clear the game. Failure will result in death. Remember that each question will increment at every 1km.")
-
-        # Define a list of questions and answers.
-    health_questions = [
-            {"questions": "A woman is competing in a fun run with a total distance of 3 kilometers. She forgets to drink her water from the 2 liter flask she carried and passes out at the 2 kilometer mark. If she ran at a pace of 200 meters per 15 minutes and she estimated that she needed to drink 250mL of her water every 30 minutes, how much water should she have already drank? Answer in mL.", "answer": "1250 mL"},
-            {"questions": "Organizers of a scavenger hunt created resting stations inside the 5km scope area for the hunt. How many resting stations are there if they are placed every 200 meters?", "answer": "25"}, 
-            {"questions": "A teenager created an exercise regimen to stay fit and healthy. He should consider his ________ so he does not overexert himself. What should he consider? ", "answer": "limits"},
-            {"questions": "A college student has been awake for 4 days without any sleep. He should have _______ instead of focusing on his work. What should he have done instead?", "answer": "slept"},
-            {"questions": "12 people are competing in a swimming contest. What equipment should they wear for their eyes?", "answer": "Goggles"}
-        
-    ]        
-    
-    # Add a health counter.
-    correct_health = 0
- 
-    # Iterate over the questions.
-    for i, questions in enumerate(health_questions):
-        print(f"\nQuestion {i+1}: {questions['questions']}")
-
-        # Fill in the answers.
-        health_answer = input("Enter your answer here: ")
-
-        # Check if the user's answer is correct.
-        if health_answer.lower() == questions["answer"].lower():
-            print("Correct! Proceed to the next question.")        
-            correct_health += 1
-            print("Current scenarios finished: ", correct_health)
-        else:
-            print(f"Incorrect. The correct answer is {question['answer']}.")
-            print("Game Over!")
-            break
-
-    if correct_health == 7:
-        game_clear += 1
-
-    play_again = input("Would you like to play another game? (yes/no): ")
-    if play_again.lower() != "yes":
-        break
-    else:
-        continue
-# Create the Ace of Clubs game.
-# Create the Jack of Diamonds game.
-# Create the Jack of Hearts game.
-# Create the Jack of Spades game.
-# Create the Jack of Clubs game.
-# Create the Queen of Diamonds game.
-# Create the Queen of Hearts game.
-# Create the Queen of Spades game.
-# Create the Queen of Clubs game.
-# Create the King of Diamonds game.
-# Create the King of Hearts game.
-# Create the King of Spades game.
-# Create the King of Clubs game.        
-        
-# Print a final message when all games are cleared.
-if game_clear == 16:
-	print("Congratulations! You have cleared all 16 games and found the truth.")
-	print("Do you want to stay in the Borderlands or return to the real world? Whatever your choice is, it doesn't really matter.")
-	print("Like Mira said, life is just a game we play together, you should try to enjoy it. Whatever you choose, its of your own volition. Do it for yourself, not for others.")
-	print("That's all for now. Maybe we'll see each other again. ")
-# Print a fail message for not completing all games.
-else:
-	print(f"You only cleared {game_clear} games.")
-	print("You have failed. Death awaits.")
-
-
+if __name__ == "__main__":
+    main()
