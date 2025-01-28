@@ -292,7 +292,21 @@ def main():
             if play_game(stand_questions, "Last Stand", 1):
                 games_played.append("King of Spades")
                 game_clear += 1
-                                                                                                       
+
+        #Create the King of Clubs game.
+        elif game_choice == "16" and "King of Clubs" not in games_played:
+            print("Welcome to the King of Clubs. The game is called Soul Bonds.")
+            print("Understand the short tale and and answer the question to clear the game.")            
+            print("You have one shot only.")
+           
+            bonds_questions = [
+                {"question": "Throughout the games, you have encountered different sorts of people. Allies and enemies alike. You may be wondering why us King games are only questions. It is not really my place to say. All you need to know is you need to find the truth to truly understand. Humanity is interesting is it not? Everyone has their own set of what makes them tick. Their likes, weaknesses, abilities, you name it. But when people come together, something almost magical happens. New ideas are made, bonds are created. Such the beauty of this cruel world. These games test your mettle in every situation, may it be physical, mental and emotional. But.... there is a fourth situation. Based on everything I've said, what fourth situation were we testing you in?' ", "answer": "Teamwork"}
+                               
+            ]
+            if play_game(bonds_questions, "Soul Bonds", 1):
+                games_played.append("King of Clubs")
+                game_clear += 1
+                                                                                                                                                                                                                              
         # End if all games have been cleared.
         if len(games_played) == 16:
             print("Congratulations! You have cleared all the games!")
