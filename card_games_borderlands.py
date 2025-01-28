@@ -225,7 +225,25 @@ def main():
             if play_game(chase_questions, "Throne War", 6):
                 games_played.append("Queen of Spades")
                 game_clear += 1
-                                                                                        
+        #Create the Queen of Clubs game.
+        elif game_choice == "12" and "Queen of Clubs" not in games_played:
+            print("Welcome to the Queen of Clubs. The game is called Snake Ladders.")
+            print("You are trapped in a room with the other participants. The goal of the game is to reach the safe zone on a real life game of snakes and ladders.")
+            print("Participants will split into 12 teams and roll the dice to move spaces forward or backward. However, there are places where a duel will take place, where the losing team will fall into a pit of snakes below. ")
+            print("The Queen of Clubs will also be participating with her Black team. The game is cleared when only one team remains.")
+           
+            safe_questions = [
+                {"question": "Your Purple Team rolls the dice and lands on a ladder, moving you up. However, the space you land on says: Answer this question or fall down to the beginning. The question is: how many tiles does a regular Snakes and Ladders have?", "answer": "100"},
+                {"question": "Moving forward, you land in a duel space where another team is waiting. The duel involves naming Greek Mythological Figures based on the information given. The teams answer and eventually, the score is 9-9, with you answering the last question. Who is the Greek God of the Sun?", "answer": "Helios"},
+                {"question": "Rolling the dice again, your team lands on a task space. The goal is to find a black poisonous snake among 100 displayed images. What infamous black snake is known to have one of the deadliest venoms?", "answer": "Black Mamba"},
+                {"question": "Nearing the end, yout team lands on a memory game. The sequence is as follows: Pink, Cards, Blue, Ace, Purple and Heart. What will be the 87th object in the sequence if it just repeats?", "answer": "Blue"},
+                {"question": "As your team reaches the end, you are faced with a final duel against the last surviving team: The Queen of Clubs team. The final duel is to find a hidden key in the space filled with 100 boxes where the only clue is that escape lies with the two teams themselves. You notice boxes with stripes among the piles. What colors are the box the key is hidden in? Answer in this format: Yellow and Orange. ", "answer": "Purple and Black"}
+                                                       
+            ]
+            if play_game(safe_questions, "Safe Zone", 5):
+                games_played.append("Queen of Clubs")
+                game_clear += 1
+                                                                                                        
         # End if all games have been cleared.
         if len(games_played) == 16:
             print("Congratulations! You have cleared all the games!")
