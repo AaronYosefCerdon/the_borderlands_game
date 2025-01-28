@@ -28,13 +28,25 @@ def play_game(questions, game_name, num_questions):
 def main():
     #Set a list to ensure no repeated games and track the finished games.
     game_clear = 0
-    games_played = [ ]  # List to track completed games
-    while len(games_played) < 4:  # Ensure all 4 games must be completed
+    games_played = [ ]  
+    while len(games_played) < 16:  
         print("Choose the game you want to play: ")
         print("1. Ace of Diamonds")
         print("2. Ace of Hearts")
         print("3. Ace of Spades")
         print("4. Ace of Clubs")
+        print("5. Jack of Diamonds")
+        print("6. Jack of Hearts")
+        print("7. Jack of Spades")
+        print("8. Jack of Clubs")
+        print("9. Queen of Diamonds")
+        print("10. Queen of Hearts")
+        print("11. Queen of Spades")
+        print("12. Queen of Clubs")
+        print("13. King of Diamonds")
+        print("14. King of Hearts")
+        print("15. King of Spades")
+        print("16. King of Clubs")
         game_choice = input("Enter the number of your chosen game: ")
         #Create the Ace of Diamonds game.
         if game_choice == "1" and "Ace of Diamonds" not in games_played:
@@ -100,11 +112,11 @@ def main():
                 games_played.append("Ace of Clubs")
                 game_clear += 1
         #End if all games have been cleared.
-        if len(games_played) == 4:
+        if len(games_played) == 16:
             print("Congratulations! You have cleared all the games!")
             break
     #End if a wrong answer is put in.
-    if len(games_played) < 4:
+    if len(games_played) < 16:
         print("You did not clear all the games. Game Over!")
 
 if __name__ == "__main__":
