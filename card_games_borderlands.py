@@ -1,6 +1,6 @@
 import sys
 
-# Print intro message for the game.
+# Print intro message for the trivia game.
 introduction = "Welcome to the Borderlands, the place between life and death. Clear all 16 games to find the truth of this place."
 print(introduction)
 
@@ -161,12 +161,28 @@ def main():
                 {"question": "The start has two possible paths. A small jump to a frail platform or a large jump to a sturdy platform. Do you do a small or large jump?", "answer": "large"},
                 {"question": "Reaching the platform, there are 2 sets of stairs. One leads downward and the other leads upward. Do you go upward or downward?", "answer": "Upward"},
                 {"question": "Upon finishing the stairs, there are 2 bridges. One is made of thick wood and the other is made of heat resistant steel. Which bridge do you cross? Wood or Steel? ", "answer": "Steel"},
-                {"question": "The goal is only step away. There are however two doors in your way. One is covered by hearts and the other is filled with spades. Which door leads to the goal? Hearts or Spades?", "answer": "Spades"},
+                  {"question": "The goal is only step away. There are however two doors in your way. One is covered by hearts and the other is filled with spades. Which door leads to the goal? Hearts or Spades?", "answer": "Spades"},
                 
             ]
             if play_game(lava_questions, "Lava Floor", 4):
                 games_played.append("Jack of Spades")
-                game_clear += 1                            
+                game_clear += 1  
+        #Create the Jack of Clubs game.
+        elif game_choice == "8" and "Jack of Clubs" not in games_played:
+            print("Welcome to the Jack of Clubs. The game is called Better Together.")
+            print("The arena is a huge mansion. Find 88 keys pertaining to the constellations scattered around. Work together with the 21 other participants to find them all.")
+            print("Since teamwork is key, each participant needs to find 4 keys. The ones assigned to you are Virgo, Libra, Andromeda and Draco. Do your part and find your keys.")
+           
+            better_questions = [
+                {"question": "The key for Libra lies behind a painting stained with blood. This clue narrows down the answer to a war painting and a massacre painting. Noting the game is about teamwork, which painting is hiding Libra's key?", "answer": "War"},
+                {"question": "After getting Libra's key, the clue for Andromeda says that it is hidden in the depths of the mansion. Do you go to the attic or the basement?", "answer": "Basement"},
+                {"question": "Upon finding Andromeda's key, you proceed to Virgo's key. The clue says it is hidden where the helpers sleep. The only places that apply are a 1st floor and a 3rd floor room. Which room is the key in?", "answer": "1st floor"},
+                  {"question": "The final key is Draco's. The clue says it is hidden where dragons rule. Upon getting to the roof, there are 7 towers with different symbols: a dove, a dragon, a star, a lion, a pegasus, a centaur and a fairy. Which tower is Draco's key in? Answer the animal only.", "answer": "Dragon"},
+                
+            ]
+            if play_game(better_questions, "Better Together", 4):
+                games_played.append("Jack of Clubs")
+                game_clear += 1                                          
         # End if all games have been cleared.
         if len(games_played) == 16:
             print("Congratulations! You have cleared all the games!")
