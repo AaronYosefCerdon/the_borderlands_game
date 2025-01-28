@@ -279,6 +279,20 @@ def main():
                 games_played.append("King of Diamonds")
                 game_clear += 1
 
+        #Create the King of Hearts game.
+        elif game_choice == "14" and "King of Hearts" not in games_played:
+            print("Welcome to the King of Hearts. The game is called Life's Meaning.")
+            print("This game is similar to the Queen of Hearts, only this one will reveal some implications you may not like.")            
+            print("All you have to do is listen to my words and say one phrase afterward. If you say the correct one, you'll finally realize the truth and clear this game.")
+           
+            meaning_questions = [
+                {"question": "Once upon a time, I wasn't always the King of Hearts you see now. I lived a normal life before this just like you did. I was and still am very detached to other people. However, I do like observing and analzying people and groups. I love finding out what makes someone who they are, who they like, who they hate, every single detail. That's why I became a psychologist back in the real world, to understand the concept of life itself through observing others. It was never enough though. I quickly realized the truth of the world. People live their lives as they see fit. And I completely understand. We're shaped by the people and the surroundings we live in. When I got here, I played games just like you. Moved forward but unlike you, I didn't make any friends, only allies I manipulated to survive. Like you now, I also faced the dreaded face cards. As for how I'm standing here now? You're gonna have to clear my game if you want to find out the truth. In terms of the concepts behind the Kings game and why their simple questions, don't you see it yet? The game may only involve single questions but the answers are incredibly difficult to find. Every person will have different interpretations and understandings. Its just the beauty of the human mind, our self is made up of a puzzle, where each piece defines who we are. Now, after everything I've said, what did I conclude about a question we all ask in our lives: What is the meaning of life?", "answer": "Everyone has their own answer."}
+                               
+            ]
+            if play_game(meaning_questions, "Life's Meaning", 1):
+                games_played.append("King of Hearts")
+                game_clear += 1
+                
         #Create the King of Spades game.
         elif game_choice == "15" and "King of Spades" not in games_played:
             print("Welcome to the King of Spades. The game is called Last Stand.")
@@ -300,7 +314,7 @@ def main():
             print("You have one shot only.")
            
             bonds_questions = [
-                {"question": "Throughout the games, you have encountered different sorts of people. Allies and enemies alike. You may be wondering why us King games are only questions. It is not really my place to say. All you need to know is you need to find the truth to truly understand. Humanity is interesting is it not? Everyone has their own set of what makes them tick. Their likes, weaknesses, abilities, you name it. But when people come together, something almost magical happens. New ideas are made, bonds are created. Such the beauty of this cruel world. These games test your mettle in every situation, may it be physical, mental and emotional. But.... there is a fourth situation. Based on everything I've said, what fourth situation were we testing you in?' ", "answer": "Teamwork"}
+                {"question": "Throughout the games, you have encountered different sorts of people. Allies and enemies alike. You may be wondering why us King games are only questions. It is not really my place to say. All you need to know is you need to find the truth to truly understand. Humanity is interesting is it not? Everyone has their own set of what makes them tick. Their likes, weaknesses, abilities, you name it. But when people come together, something almost magical happens. New ideas are made, bonds are created. Such the beauty of this cruel world. These games test your mettle in every situation, may it be physical, mental and emotional. But.... there is a fourth situation. Based on everything I've said, what fourth situation were we testing you in?", "answer": "Teamwork"}
                                
             ]
             if play_game(bonds_questions, "Soul Bonds", 1):
