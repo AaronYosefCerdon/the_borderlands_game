@@ -214,8 +214,7 @@ def main():
         #Create the Queen of Hearts game.
         elif game_choice == "10" and "Queen of Hearts" not in games_played:
             print("Welcome to the Queen of Hearts. The game is called Life Story.")
-            print("The game is simple. Just answer one simple question about life.")                
-            print("The clear condition is answer correctly to win.")
+            print("The game is simple. Just answer one simple question about life.")                print("The clear condition is answer correctly to win.")
            
             reflect_questions = [
                 {"question": "There was once a person who felt alone their whole life. Even surrounded by loved ones, they felt detached from the world around them. One day, the person found themselves in a mysterious place where deadly games have to be played to survive and he was going to be like always, solo. Upon clearing the final game, a question was raised into their thought. Regardless of their answer, the person would finally find out the truth of that world after every single action. My question is this, what did the person lack that they were so deatched from the world? ", "answer": "Emotion"}
@@ -263,7 +262,22 @@ def main():
             if play_game(safe_questions, "Snake Ladders", 5):
                 games_played.append("Queen of Clubs")
                 game_clear += 1
-                                                                                                        
+
+        #Create the King of Diamonds game.
+        elif game_choice == "13" and "King of Diamonds" not in games_played:
+            print("Welcome to the King of Diamonds. The game is called Mental Mix.")
+            print("The game is simple. Just simply answer one question about the given scenario.")
+            
+            print("Failure will result in death by acid rain.")
+           
+            mix_questions = [
+                {"question": "Juggling life, one person realized that yhe world favors the rich and not the poor. Under the guise of fairness, regulations from governing bodies subtly ensure their favored status quo, all because of greed and arrogance. Something the person thought of was take the problem and solve it on their own.Try as they might, with their blood, sweat and tears, human nature prevents progress. Interestingly, the person never gave up. Concealing their real self, they became ruthless and buried their former slef behind walls as thick as steel. Eventually, their mind twisted in pursuit of fairness. What is the person seeking in this story? ", "answer": "Justice"},
+                               
+            ]
+            if play_game(mix_questions, "Mental Mix", 1):
+                games_played.append("King of Diamonds")
+                game_clear += 1
+                                                                          
         # End if all games have been cleared.
         if len(games_played) == 16:
             print("Congratulations! You have cleared all the games!")
