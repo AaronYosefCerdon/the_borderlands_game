@@ -324,6 +324,16 @@ def main():
         # End if all games have been cleared.
         if len(games_played) == 16:
             print("Congratulations! You have cleared all the games!")
+            print("The truth will now be revealed.")
+            print("While this world is the place between life and death, it's not that simple.These games have existed for a long time. A cycle always begins.")
+            print("People play the game and either die to or beat the face cards in the end. Either way, there really is no happy ending. ")
+            print("But like Mira said, life is just a game we play together, you should try to enjoy it. So now, you get the choice of either stay here and become a citizen like the face cards you faced. Or, leave the Borderlands and return to the real world.")
+            print("You may be wondering who would want to stay in a place like this? More people than you think. Not everyone is satisfied or happy with their lives. Its human nature to try and find somewhere you feel like you belong.")
+            print("You saw the face cards. They chose to stay because they hated their previous lives. They would rather stay and keep risking their lives than live a hollow, miserable life.")
+            print("And that's okay. Everyone should have a say with their life. No one should tell you how you can live. Its why this choice exists.")
+            print("As for how the Borderlands began? The truth is, no one really knows. Time here is so fast that every cycle lasts about 1 minute in the real world.")
+            print("Anyways, choose your fate now. Its in your hands. You won the games, I know you'll make the best choice for yourself.")
+            print("Once again, Congratulations on clearing all the games. Who knows? Maybe we'll see each other again.")
             break
    
 
