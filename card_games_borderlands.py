@@ -94,7 +94,7 @@ def main():
             print("You are a rabbit running through a 5km long road. The goal of the game is to make it through the obstacles blocking the road.")
             print("Answer 5 health-related questions to clear the game. Failure will result in death. Remember that each question will increment at every 1km.")
             health_questions = [
-                {"question": "A woman is competing in a fun run with a total distance of 3 kilometers. She forgets to drink her water from the 2-liter flask she carried and passes out at the 2-kilometer mark. If she ran at a pace of 200 meters per 15 minutes and she estimated that she needed to drink 250mL of her water every 30 minutes, how much water should she have already drunk? Answer in mL.", "answer": "1250 mL"},
+                {"question": "A woman is competing in a fun run with a total distance of 3 kilometers. She forgets to drink her water from the 2-liter flask she carried and passes out at the 2-kilometer mark. If she ran at a pace of 200 meters per 15 minutes and she estimated that she needed to drink 250mL of her water every 30 minutes, how much water should she have already drunk? Answer in this format: 50 mL.", "answer": "1250 mL"},
                 {"question": "Organizers of a scavenger hunt created resting stations inside the 5km scope area for the hunt. How many resting stations are there if they are placed every 200 meters?", "answer": "25"},
                 {"question": "A teenager created an exercise regimen to stay fit and healthy. He should consider his ________ so he does not overexert himself. What should he consider?", "answer": "limits"},
                 {"question": "A college student has been awake for 4 days without any sleep. He should have _______ instead of focusing on his work. What should he have done instead?", "answer": "slept"},
@@ -129,7 +129,7 @@ def main():
             print("Answer 7 math questions to escape the maze in the shortest possible path. Failure will result in death by drowning.")
             math_questions = [
                 {"question": "A baker made seven dozen cupcakes. Half are strawberry, a quarter are blueberry and the last quarter are chocolate. How many strawberry and blueberry cupcakes are there?", "answer": "63"},
-                {"question": "A town with a population of 138,492 is holding an election for mayor. How many votes does a candidate need for a majority? Answer in this format: 10,000.", "answer": "69,246"},
+                {"question": "A town with a population of 138,492 is holding an election for mayor. How many votes does a candidate need for a majority? Answer in this format: 10,000.", "answer": "69,247"},
                 {"question": "A school is sending 48 students abroad for an exchange program. 15 are for Humanities, 8 are for Science, 12 are for History and the rest are for Math. How many students are there for Math? ", "answer": "13"},
                 {"question": "A couple are planning their wedding. They invited 427 guests in total. Tables for the reception are for 7. How many tables are needed to seat all 427 guests?", "answer": "61"},
                 {"question": "A flower shop sells bouquets depending on the number of flowers. 20 flowers cost Php 150. How much does 90 flowers cost? Answer only the number i.e. 400.", "answer": "675"},
