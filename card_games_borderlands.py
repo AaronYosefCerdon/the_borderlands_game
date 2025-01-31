@@ -134,7 +134,7 @@ def main():
                 {"question": "A couple are planning their wedding. They invited 427 guests in total. Tables for the reception are for 7. How many tables are needed to seat all 427 guests?", "answer": "61"},
                 {"question": "A flower shop sells bouquets depending on the number of flowers. 20 flowers cost Php 150. How much does 90 flowers cost? Answer only the number i.e. 400.", "answer": "675"},
                 {"question": "A pet shop has 47 of a certain breed of dog. If each dog needs about 4kg of food per month and the cost of food per kg is Php 200, how much do they spend a year on food? Answer in this format: 10,000", "answer": "451,200"},
-                {"question": "A laboratory synthesized a new serum for a certain disease. There are 176 patients awaiting this treatment. If each patient needs a dose for day and each dose is inside a syringe, how many syringes do all the patients need for a week?", "answer": ""}
+                {"question": "A laboratory synthesized a new serum for a certain disease. There are 176 patients awaiting this treatment. If each patient needs a dose for day and each dose is inside a syringe, how many syringes do all the patients need for a week?", "answer": "1232"}
             ]
             if play_game(math_questions, "Mathlete Mayhem", 7):
                 games_played.append("Jack of Diamonds")
